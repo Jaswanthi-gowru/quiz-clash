@@ -1,0 +1,10 @@
+services:
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "6379:6379"
+    volumes:
+      - quiz-clash-redis:/data
+volumes:
+  quiz-clash-redis:
